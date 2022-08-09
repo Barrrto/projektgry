@@ -129,3 +129,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 5535664612094380635, guid: 3da2e4e0cfc03ad42941975c596a74d1, type: 3}
+  destroy: {fileID: 5838083995444991430, guid: 2966d0e3c4f43834ba261d4384478515, type: 3}

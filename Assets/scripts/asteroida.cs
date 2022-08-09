@@ -6,7 +6,7 @@ public class asteroida : MonoBehaviour
 {
     private int life = 3;
     public Transform target;
-
+    [SerializeField] private ParticleSystem destroy;
     private void Start()
     {
         Vector3 randomSpawnPosition = new Vector3(Random.Range(-100, 110), Random.Range(-100, 110), Random.Range(-100, 110));
@@ -27,10 +27,12 @@ public class asteroida : MonoBehaviour
         if(other.CompareTag("planeta"))
         {
             Destroy(gameObject);
+            Instantiate(destroy, transform.position, Quaternion.identity);
         }
         if(life == 0)
         {
             Destroy(gameObject);
+            Instantiate(destroy, transform.position, Quaternion.identity);
         }
     }
 }
