@@ -14,6 +14,12 @@ public class playermovement : MonoBehaviour
     private float rollInput;
     public float rollSpeed = 90f, rollAcceleration = 3.5f;
 
+
+    public float acceleration;
+    public float distancemoved = 0;
+    public float lastdistancemoved = 0;
+   
+
     // Start is called before the first frame update 
     private void Start()
     {
@@ -41,8 +47,11 @@ public class playermovement : MonoBehaviour
         activeHoverSpeed = Mathf.Lerp(activeHoverSpeed, Input.GetAxisRaw("Hover") * hoverSpeed, hoverAcceleration * Time.deltaTime);
 
 
-        transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
+       transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
         transform.position += (transform.right * activeStafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
+
+
+        
 
     }
 }
