@@ -10,21 +10,14 @@ public class shooting : MonoBehaviour
     public float fireRate = 15f;
     public float _maxReload = 100f;
     public float _currentReload = 0f;
-    
     [SerializeField] private ReloadBar _ReloadBar;
     private bool canshoot;
-    
-
-
     private float nextTimeToFire = 0f;
-
 
     private void Start()
     {
         _currentReload = 0;
         _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);
-        
-
     }
     private void shoot()
     {
@@ -39,51 +32,45 @@ public class shooting : MonoBehaviour
                 _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);
             }
         }
-        if(canshoot == false)
+        if (canshoot == false)
         {
             InvokeRepeating("Decap", 5, 1f);
-            
+            _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);
+
         }
         if (Input.GetMouseButtonUp(0))
         {
             InvokeRepeating("Decap", 2f, 2.5f);
-            if(_currentReload >= 100)
+            if (_currentReload >= 100)
             {
                 CancelInvoke("Decap");
+                _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);
             }
         }
     }
-
     private void Update()
     {
             
-            if (_currentReload < 100)
+            if(_currentReload < 100)
             {
                 canshoot = true;
                 shoot();
 
         }
-            if (_currentReload >= 100 )
+            if(_currentReload >= 100 )
             {
                 canshoot = false;
                 shoot();
             } 
-          
-        
-        
     }
-
     private void Decap()
     {
         _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);
         canshoot = false;
         _currentReload -= 10f;
-        if (_currentReload == 0)
+        if(_currentReload == -10)
         {
             CancelInvoke("Decap");
         }
-       
-       
     }
-  
 }
