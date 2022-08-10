@@ -44,6 +44,14 @@ public class shooting : MonoBehaviour
             InvokeRepeating("Decap", 5, 1f);
             
         }
+        if (Input.GetMouseButtonUp(0))
+        {
+            InvokeRepeating("Decap", 2f, 2.5f);
+            if(_currentReload >= 100)
+            {
+                CancelInvoke("Decap");
+            }
+        }
     }
 
     private void Update()
@@ -74,6 +82,7 @@ public class shooting : MonoBehaviour
         {
             CancelInvoke("Decap");
         }
+       
        
     }
   

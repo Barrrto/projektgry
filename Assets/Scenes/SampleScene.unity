@@ -1273,7 +1273,7 @@ MonoBehaviour:
   fireRate: 4
   _maxReload: 100
   _currentReload: 0
-  _ReloadBar: {fileID: 0}
+  _ReloadBar: {fileID: 1581490211}
 --- !u!1001 &1184542790
 PrefabInstance:
   m_ObjectHideFlags: 0
