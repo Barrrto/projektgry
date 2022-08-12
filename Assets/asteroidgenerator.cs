@@ -7,7 +7,7 @@ public class asteroidgenerator : MonoBehaviour
     public GameObject[] asteroida;
     public bool stopSpawning = false;
     private float spawnTime = 4f;
-    private float spawnDelay = 6f;
+    public float spawnDelay = 6f;
 
     public void Start()
     {

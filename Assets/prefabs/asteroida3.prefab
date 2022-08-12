@@ -129,8 +129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de4248f2873abd4b8750148716aa1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 5535664612094380635, guid: 3da2e4e0cfc03ad42941975c596a74d1, type: 3}
+  target: {fileID: 7512146175547530547, guid: 25e79eadb4accb94bb45566898c5e352, type: 3}
+  asteroidspeed: 10
   destroy: {fileID: 5838083995444991430, guid: 2966d0e3c4f43834ba261d4384478515, type: 3}
+  _planethp: {fileID: 0}
+  _asteroidgenerator: {fileID: 0}
 --- !u!1001 &4252180633701384052
 PrefabInstance:
   m_ObjectHideFlags: 0
