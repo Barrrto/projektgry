@@ -34,6 +34,7 @@ public class shooting : MonoBehaviour
         }
         if (canshoot == false)
         {
+<<<<<<< Updated upstream
             InvokeRepeating("Decap", 5, 1f);
             _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);
 
@@ -46,29 +47,33 @@ public class shooting : MonoBehaviour
                 CancelInvoke("Decap");
                 _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);
             }
+=======
+            InvokeRepeating("Decap", 2.5f, 1f);
+            
+>>>>>>> Stashed changes
         }
     }
     private void Update()
     {
-
-        if (_currentReload < 100)
-        {
-            canshoot = true;
-            shoot();
+            
+            if(_currentReload < 100)
+            {
+                canshoot = true;
+                shoot();
 
         }
-        if (_currentReload >= 100)
-        {
-            canshoot = false;
-            shoot();
-        }
+            if(_currentReload >= 100 )
+            {
+                canshoot = false;
+                shoot();
+            } 
     }
     private void Decap()
     {
         _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);
         canshoot = false;
         _currentReload -= 10f;
-        if (_currentReload == -10)
+        if(_currentReload == -10)
         {
             CancelInvoke("Decap");
         }
