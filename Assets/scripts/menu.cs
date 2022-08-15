@@ -10,6 +10,10 @@ public class menu : MonoBehaviour
         SceneManager.LoadScene("gra");
     }
 
+    public void Settings()
+    {
+
+    }
     public void Quit()
     {
         Application.Quit();

@@ -9,7 +9,6 @@ public class PlanetHP : MonoBehaviour
     public float _CurrentHealth = 100f;
     [SerializeField] private HealthBar _healthbar;
     
-
     private void Start()
     {
         _CurrentHealth = _maxHealth;
@@ -24,5 +23,16 @@ public class PlanetHP : MonoBehaviour
             _CurrentHealth -= 10;
             _healthbar.UpdateHealthBar(_maxHealth, _CurrentHealth);
         }
+        if (other.CompareTag("asteroida2"))
+        {
+            _CurrentHealth -= 20;
+            _healthbar.UpdateHealthBar(_maxHealth, _CurrentHealth);
+        }
+    }
+
+    public void Heal()
+    {
+        _CurrentHealth += 20;
+        _healthbar.UpdateHealthBar(_maxHealth, _CurrentHealth);        
     }
 }

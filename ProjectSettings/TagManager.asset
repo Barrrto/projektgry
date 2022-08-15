@@ -7,6 +7,8 @@ TagManager:
   - bullet
   - asteroida
   - planeta
+  - asteroida2
+  - statek
   layers:
   - Default
   - TransparentFX

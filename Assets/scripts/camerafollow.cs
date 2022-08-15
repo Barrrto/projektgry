@@ -8,7 +8,7 @@ public class camerafollow : MonoBehaviour
 
     public Transform targetPoint;
 
-    public float moveSpeed = 8f, rotateSpeed = 3f;
+    public float moveSpeed = 10f, rotateSpeed = 10f;
 
     private void Awake()
     {

@@ -20,7 +20,7 @@ public class playermovement : MonoBehaviour
     public float lastdistancemoved = 0;
    
 
-    // Start is called before the first frame update 
+    
     private void Start()
     {
         screenCenter.x = Screen.width * .5f;
@@ -41,17 +41,25 @@ public class playermovement : MonoBehaviour
         mouseDistance = Vector2.ClampMagnitude(mouseDistance, 1f);
         transform.Rotate(-mouseDistance.y * lookRateSpeed * Time.deltaTime, mouseDistance.x * lookRateSpeed * Time.deltaTime, 0f, Space.Self);
 
-
         activeForwardSpeed = Mathf.Lerp(activeForwardSpeed, Input.GetAxisRaw("Vertical") * forwardSpeed, forwardAcceleration * Time.deltaTime);
         activeStafeSpeed = Mathf.Lerp(activeStafeSpeed, Input.GetAxisRaw("Horizontal") * strafeSpeed, strefaAcceleration * Time.deltaTime);
         activeHoverSpeed = Mathf.Lerp(activeHoverSpeed, Input.GetAxisRaw("Hover") * hoverSpeed, hoverAcceleration * Time.deltaTime);
 
-
        transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
         transform.position += (transform.right * activeStafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
+    }
 
+   
 
-        
+    public void Speed()
+    {
+        forwardSpeed = 50;
+        StartCoroutine(speedup());
+    }
 
+    IEnumerator speedup()
+    {
+        yield return new WaitForSeconds(5f);
+        forwardSpeed = 25;
     }
 }

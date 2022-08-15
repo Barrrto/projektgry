@@ -14,6 +14,8 @@ public class shooting : MonoBehaviour
     private bool canshoot;
     private float nextTimeToFire = 0f;
 
+    public Transform target;
+
     private void Start()
     {
         _currentReload = 0;
@@ -26,8 +28,13 @@ public class shooting : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
+
+                
+
+
                 var bullet = Instantiate(bulletPrefab, gunpoint.position, gunpoint.rotation);
-                bullet.GetComponent<Rigidbody>().velocity = gunpoint.forward * bulletSpeed;
+                bullet.GetComponent<Rigidbody>().velocity = target.forward * bulletSpeed;
+
                 _currentReload += 20;
                 _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);
             }

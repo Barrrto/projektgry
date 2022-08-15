@@ -36,7 +36,7 @@ public class asteroida : MonoBehaviour
 
     private void PlanetState()
     {
-        _ = GameObject.FindWithTag("asteroida").GetComponent<asteroida>();
+        GameObject.FindWithTag("asteroida").GetComponent<asteroida>();
         if (_planethp._CurrentHealth <= 70 && _planethp._CurrentHealth > 50)
         {
             asteroidspeed = 0.2f;
