@@ -5,7 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float life = 3;
-
+    
     private void Awake()
     {
         Destroy(gameObject, life);
@@ -18,4 +18,5 @@ public class bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

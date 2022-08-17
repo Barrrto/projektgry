@@ -9,7 +9,6 @@ public class speed : MonoBehaviour
     private void Start()
     {
          _playermovement = GameObject.Find("Playership").GetComponent<playermovement>();
-        
     }
     private void OnTriggerEnter(Collider other)
     {

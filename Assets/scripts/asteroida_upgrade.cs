@@ -5,15 +5,17 @@ using UnityEngine;
 public class asteroida_upgrade : MonoBehaviour
 {
 
-    private int life = 5;
+    private int life = 6;
     public Transform target;
-    public float asteroidspeed;
+    public float asteroidspeed = 0.2f;
 
     [SerializeField] private ParticleSystem destroy;
+    [SerializeField] private fpscap _bullet;
+    private ParticleSystem particle;
     private void Start()
     {
-        asteroidspeed = 0.1f;
-
+        particle = GameObject.Find("fire_another").GetComponent<ParticleSystem>();
+        _bullet = GameObject.Find("gamemanager").GetComponent<fpscap>();
         Vector3 randomSpawnPosition = new Vector3(Random.Range(-100, 110), Random.Range(-100, 110), Random.Range(-100, 110));
         transform.position = randomSpawnPosition;
     }
@@ -27,7 +29,7 @@ public class asteroida_upgrade : MonoBehaviour
     {
         if (other.CompareTag("bullet"))
         {
-            life--;
+            life = life - _bullet.bulletdmg;
         }
         if (other.CompareTag("planeta"))
         {
@@ -39,5 +41,29 @@ public class asteroida_upgrade : MonoBehaviour
             Destroy(gameObject);
             Instantiate(destroy, transform.position, Quaternion.identity);
         }
+    }
+
+    IEnumerator color()
+    {
+        yield return new WaitForSeconds(5f);
+        particle.startColor = Color.red;
+    }
+
+    public void colorchange()
+    {
+        particle.startColor = new Color32(61, 178, 236, 255);
+        StartCoroutine(color());
+    }
+
+    IEnumerator freeze1()
+    {
+        yield return new WaitForSeconds(5f);
+        asteroidspeed = 0.2f;
+    }
+
+    public void freeze2()
+    {
+        asteroidspeed = 0;
+        StartCoroutine(freeze1());
     }
 }

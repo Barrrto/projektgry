@@ -4910,8 +4910,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &4362592667875796645
-MeshCollider:
+--- !u!135 &8135380299786845758
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4920,10 +4920,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4493585093827132993, guid: 8dab7acd84844544bbebb5f181662ed6, type: 3}
+  serializedVersion: 2
+  m_Radius: 1.7567872
+  m_Center: {x: -0.026109517, y: -0.031043764, z: -0.029328462}
 --- !u!114 &-7045005131361759852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4936,9 +4935,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e897927246cba344bc237f506b7b808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 7512146175547530547, guid: 25e79eadb4accb94bb45566898c5e352, type: 3}
+  target: {fileID: 5615641148575375906, guid: ceda732ae275815468bb2418683711ea, type: 3}
   asteroidspeed: 0.2
   destroy: {fileID: 5552732927821907775, guid: c7346493ee18c8f4a8d20d9e6d5ec502, type: 3}
+  _bullet: {fileID: 0}
 --- !u!4 &8655789630789173803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8dab7acd84844544bbebb5f181662ed6, type: 3}
