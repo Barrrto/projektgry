@@ -53,7 +53,7 @@ public class playermovement : MonoBehaviour
 
     public void Speed()
     {
-        forwardSpeed = 50;
+        forwardSpeed = 60;
         StartCoroutine(speedup());
     }
 

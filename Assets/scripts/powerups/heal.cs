@@ -5,11 +5,12 @@ using UnityEngine.UI;
 public class heal : MonoBehaviour
 {
     [SerializeField] private PlanetHP _planethp;
-
+    [SerializeField] private ParticleSystem healpart;
 
     private void Start()
     {
-        _planethp = GameObject.Find("Earth_final").GetComponent<PlanetHP>();
+        _planethp = GameObject.Find("planet_controller").GetComponent<PlanetHP>();
+        Destroy(gameObject, 10);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -17,12 +18,9 @@ public class heal : MonoBehaviour
         if (other.CompareTag("statek"))
         {
             _planethp.Heal();
+            Instantiate(healpart, transform.position, Quaternion.identity);
             Destroy(gameObject);
            
         }
-    }
-    private void Update()
-    {
-        Destroy(gameObject, 20);
     }
 }

@@ -5,22 +5,21 @@ using UnityEngine;
 public class speed : MonoBehaviour
 {
     [SerializeField] private  playermovement _playermovement;
-
+    [SerializeField] private ParticleSystem speedpart;
     private void Start()
     {
-         _playermovement = GameObject.Find("Playership").GetComponent<playermovement>();
+        Destroy(gameObject, 10);
+        _playermovement = GameObject.Find("Playership").GetComponent<playermovement>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("statek"))
         {
             _playermovement.Speed();
+            Instantiate(speedpart, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-    }
-    private void Update()
-    {
-        Destroy(gameObject, 10);
     }
     
 }

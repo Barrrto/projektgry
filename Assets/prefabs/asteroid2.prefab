@@ -49,11 +49,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de4248f2873abd4b8750148716aa1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 5615641148575375906, guid: ceda732ae275815468bb2418683711ea, type: 3}
+  target: {fileID: 1564649646366803361, guid: b41ee8422a2c395418b84e5c4a4c81cd, type: 3}
+  asteroidspeed: 0.2
   destroy: {fileID: 5838083995444991430, guid: 2966d0e3c4f43834ba261d4384478515, type: 3}
-  _planethp: {fileID: 0}
-  _asteroidgenerator: {fileID: 0}
+  freezeparticles: {fileID: 0}
   _bullet2: {fileID: 0}
+  particle_fire: {fileID: 3726168067361509382}
 --- !u!54 &8591461896346563420
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -198,6 +199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c561767f0843d5945a52df0ec4bd3319, type: 3}
+--- !u!1 &3726168067361509382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8198519694766887180, guid: c561767f0843d5945a52df0ec4bd3319, type: 3}
+  m_PrefabInstance: {fileID: 4787603639585947914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3726168067361509401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8198519694766887187, guid: c561767f0843d5945a52df0ec4bd3319, type: 3}
