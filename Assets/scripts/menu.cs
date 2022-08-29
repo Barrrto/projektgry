@@ -12,7 +12,7 @@ public class menu : MonoBehaviour
 
     public void Settings()
     {
-        SceneManager.LoadScene("Settings");
+        SceneManager.LoadScene("settingsv2");
     }
     public void Quit()
     {
