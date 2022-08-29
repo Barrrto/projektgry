@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3354985534572449252}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -0.6404562, y: 0.6066185, z: 13.598118}
-  m_LocalScale: {x: 0.13442415, y: 0.13442415, z: 0.50308573}
+  m_LocalPosition: {x: -0.594, y: 0.5211, z: 13.6616}
+  m_LocalScale: {x: 0.07390387, y: 0.04907709, z: 0.45050672}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 3
+  destroypart: {fileID: 1040853140188965000, guid: ac09e1d5ef093644e944b98762e78367, type: 3}
 --- !u!54 &5654551826154034109
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128,4 +129,4 @@ CapsuleCollider:
   m_Radius: 1
   m_Height: 2.4515564
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.0041552642}
+  m_Center: {x: 0, y: 0, z: 0}

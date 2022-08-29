@@ -49,8 +49,6 @@ public class playermovement : MonoBehaviour
         transform.position += (transform.right * activeStafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
     }
 
-   
-
     public void Speed()
     {
         forwardSpeed = 60;
@@ -60,6 +58,6 @@ public class playermovement : MonoBehaviour
     IEnumerator speedup()
     {
         yield return new WaitForSeconds(5f);
-        forwardSpeed = 25;
+        forwardSpeed = 35;
     }
 }

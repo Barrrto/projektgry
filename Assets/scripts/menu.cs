@@ -12,11 +12,16 @@ public class menu : MonoBehaviour
 
     public void Settings()
     {
-
+        SceneManager.LoadScene("Settings");
     }
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void Resume()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

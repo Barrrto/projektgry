@@ -11,7 +11,9 @@ public class shooting : MonoBehaviour
     public float _maxReload = 100f;
     public float _currentReload = 0f;
     [SerializeField] private ReloadBar _ReloadBar;
-    
+    [SerializeField] private ParticleSystem shoot_part;
+    [SerializeField] private ParticleSystem shoot_part2;
+
     private bool canshoot;
     private float nextTimeToFire = 0f;
 
@@ -31,6 +33,9 @@ public class shooting : MonoBehaviour
                 nextTimeToFire = Time.time + 1f / fireRate;
                 var bullet = Instantiate(bulletPrefab, gunpoint.position, gunpoint.rotation);
                 bullet.GetComponent<Rigidbody>().velocity = target.forward * bulletSpeed;
+
+                shoot_part.Play();
+                shoot_part2.Play();
 
                 _currentReload += 20;
                 _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);

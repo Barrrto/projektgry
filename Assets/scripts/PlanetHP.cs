@@ -15,11 +15,16 @@ public class PlanetHP : MonoBehaviour
     [SerializeField] private GameObject st;
     [SerializeField] private GameObject nd;
     [SerializeField] private GameObject rd;
+
+    [SerializeField] private GAMEOVER _gameover;
+
+    [SerializeField] private GameObject game;
+    [SerializeField] private GameObject gameover;
     private void Start()
     {
         _CurrentHealth = _maxHealth;
         _healthbar.UpdateHealthBar(_maxHealth, _CurrentHealth);
-
+        _gameover = GameObject.Find("gamemanager").GetComponent<GAMEOVER>(); ;
         _planethp = GameObject.FindWithTag("planeta").GetComponent<PlanetHP>();
         _asteroidgenerator = GameObject.FindWithTag("GameController").GetComponent<asteroidgenerator>();
     }
@@ -36,11 +41,25 @@ public class PlanetHP : MonoBehaviour
             _CurrentHealth -= 20;
             _healthbar.UpdateHealthBar(_maxHealth, _CurrentHealth);
         }
+        if(other.CompareTag("statek"))
+        {
+            game.SetActive(false);
+            gameover.SetActive(true);
+            Cursor.visible = true;
+            _gameover.ScoreUpdate();
+        }
     }
     private void Update()
     {
         _asteroida = GameObject.FindWithTag("asteroida").GetComponent<asteroida>();
         PlanetState();
+
+        if (_CurrentHealth <= 0)
+        {
+            game.SetActive(false);
+            gameover.SetActive(true);
+            Cursor.visible = true;
+        }
     }
     private void PlanetState()
     {
@@ -58,6 +77,7 @@ public class PlanetHP : MonoBehaviour
             
             third();
         }
+        
     }
     public void Heal()
     {

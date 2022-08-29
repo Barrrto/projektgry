@@ -11,6 +11,7 @@ public class asteroida_upgrade : MonoBehaviour
 
     [SerializeField] private ParticleSystem destroy;
     [SerializeField] private fpscap _bullet;
+    [SerializeField] private GAMEOVER _gameover;
     private ParticleSystem particle;
 
     private void Start()
@@ -20,6 +21,7 @@ public class asteroida_upgrade : MonoBehaviour
         _bullet = GameObject.Find("gamemanager").GetComponent<fpscap>();
         Vector3 randomSpawnPosition = new Vector3(Random.Range(-100, 110), Random.Range(-100, 110), Random.Range(-100, 110));
         transform.position = randomSpawnPosition;
+        _gameover = GameObject.Find("gamemanager").GetComponent<GAMEOVER>();
     }
     private void FixedUpdate()
     {
@@ -42,6 +44,7 @@ public class asteroida_upgrade : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(destroy, transform.position, Quaternion.identity);
+            _gameover.score += 60;
         }
     }
 
