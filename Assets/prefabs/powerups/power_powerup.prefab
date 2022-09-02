@@ -84,6 +84,8 @@ MonoBehaviour:
   _asteroidaupgrade: {fileID: 0}
   _bulletcontroller: {fileID: 0}
   oneshotpart: {fileID: 1098984160271434, guid: 1448e7826a34c5f44a0186813ee3e9a9, type: 3}
+  _gameover: {fileID: 0}
+  pickup: {fileID: 7836730036367279300, guid: 50d0dde0f083abe43a997caa1feabfe0, type: 3}
 --- !u!54 &7410627101246297470
 Rigidbody:
   m_ObjectHideFlags: 0

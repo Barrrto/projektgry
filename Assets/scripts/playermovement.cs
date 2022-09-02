@@ -13,7 +13,7 @@ public class playermovement : MonoBehaviour
 
     private float rollInput;
     public float rollSpeed = 90f, rollAcceleration = 3.5f;
-
+    [SerializeField] private AudioSource engine_sound;
 
     public float acceleration;
     public float distancemoved = 0;
@@ -25,6 +25,7 @@ public class playermovement : MonoBehaviour
     {
         screenCenter.x = Screen.width * .5f;
         screenCenter.y = Screen.height * .5f;
+        engine_sound = GameObject.Find("engine_sound").GetComponent<AudioSource>();
 
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
@@ -47,6 +48,15 @@ public class playermovement : MonoBehaviour
 
        transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
         transform.position += (transform.right * activeStafeSpeed * Time.deltaTime) + (transform.up * activeHoverSpeed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            engine_sound.Play();
+        }
+        if(Input.GetKeyUp(KeyCode.W))
+        {
+            engine_sound.Stop();
+        }    
     }
 
     public void Speed()

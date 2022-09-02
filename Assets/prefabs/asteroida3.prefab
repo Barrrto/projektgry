@@ -118,9 +118,10 @@ MonoBehaviour:
   target: {fileID: 1564649646366803361, guid: b41ee8422a2c395418b84e5c4a4c81cd, type: 3}
   asteroidspeed: 0.2
   destroy: {fileID: 5838083995444991430, guid: 2966d0e3c4f43834ba261d4384478515, type: 3}
-  freezeparticles: {fileID: 0}
   _bullet2: {fileID: 0}
-  particle_fire: {fileID: 5387494793336008312}
+  _gameover: {fileID: 0}
+  asteroid_destroy: {fileID: 2551118341630438044, guid: fc5055f551daf3143ac54b17e30d585a, type: 3}
+  earth_sound: {fileID: 3515496553767979277, guid: e84c294709b4bc9498fdb4d1adf23f6c, type: 3}
 --- !u!135 &6180557419185508820
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -194,10 +195,5 @@ PrefabInstance:
 --- !u!4 &5387494793336008295 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8198519694766887187, guid: c561767f0843d5945a52df0ec4bd3319, type: 3}
-  m_PrefabInstance: {fileID: 4252180633701384052}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5387494793336008312 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8198519694766887180, guid: c561767f0843d5945a52df0ec4bd3319, type: 3}
   m_PrefabInstance: {fileID: 4252180633701384052}
   m_PrefabAsset: {fileID: 0}

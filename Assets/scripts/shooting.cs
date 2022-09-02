@@ -13,7 +13,7 @@ public class shooting : MonoBehaviour
     [SerializeField] private ReloadBar _ReloadBar;
     [SerializeField] private ParticleSystem shoot_part;
     [SerializeField] private ParticleSystem shoot_part2;
-
+    [SerializeField] private AudioSource shoot_audio;
     private bool canshoot;
     private float nextTimeToFire = 0f;
 
@@ -37,6 +37,7 @@ public class shooting : MonoBehaviour
                 shoot_part.Play();
                 shoot_part2.Play();
 
+                shoot_audio.Play();
                 _currentReload += 20;
                 _ReloadBar.UpdateReloadBar(_maxReload, _currentReload);
             }

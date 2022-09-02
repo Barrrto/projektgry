@@ -79,6 +79,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _planethp: {fileID: 8671169721353878361, guid: b41ee8422a2c395418b84e5c4a4c81cd, type: 3}
   healpart: {fileID: 7559306359381031317, guid: d53f83f9c30e6c14da5a44e4aa07cbe7, type: 3}
+  _gameover: {fileID: 0}
+  pickup: {fileID: 1520933300341545333, guid: 068a5373b99860743a852975d6197bee, type: 3}
 --- !u!54 &8097291901360994160
 Rigidbody:
   m_ObjectHideFlags: 0

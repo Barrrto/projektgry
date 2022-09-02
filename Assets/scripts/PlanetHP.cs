@@ -20,6 +20,7 @@ public class PlanetHP : MonoBehaviour
 
     [SerializeField] private GameObject game;
     [SerializeField] private GameObject gameover;
+    [SerializeField] private AudioSource end_sound;
     private void Start()
     {
         _CurrentHealth = _maxHealth;
@@ -27,6 +28,7 @@ public class PlanetHP : MonoBehaviour
         _gameover = GameObject.Find("gamemanager").GetComponent<GAMEOVER>(); ;
         _planethp = GameObject.FindWithTag("planeta").GetComponent<PlanetHP>();
         _asteroidgenerator = GameObject.FindWithTag("GameController").GetComponent<asteroidgenerator>();
+        end_sound = GameObject.Find("BOOM").GetComponent<AudioSource>();
     }
     
     private void OnTriggerEnter(Collider other)
@@ -47,6 +49,7 @@ public class PlanetHP : MonoBehaviour
             gameover.SetActive(true);
             Cursor.visible = true;
             _gameover.ScoreUpdate();
+            end_sound.Play();
         }
     }
     private void Update()
@@ -59,6 +62,7 @@ public class PlanetHP : MonoBehaviour
             game.SetActive(false);
             gameover.SetActive(true);
             Cursor.visible = true;
+            end_sound.Play();
         }
     }
     private void PlanetState()

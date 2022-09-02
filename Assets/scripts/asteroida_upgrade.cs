@@ -12,6 +12,8 @@ public class asteroida_upgrade : MonoBehaviour
     [SerializeField] private ParticleSystem destroy;
     [SerializeField] private fpscap _bullet;
     [SerializeField] private GAMEOVER _gameover;
+    [SerializeField] AudioSource asteroid_destroy;
+    [SerializeField] AudioSource earth_sound;
     private ParticleSystem particle;
 
     private void Start()
@@ -22,6 +24,8 @@ public class asteroida_upgrade : MonoBehaviour
         Vector3 randomSpawnPosition = new Vector3(Random.Range(-100, 110), Random.Range(-100, 110), Random.Range(-100, 110));
         transform.position = randomSpawnPosition;
         _gameover = GameObject.Find("gamemanager").GetComponent<GAMEOVER>();
+        asteroid_destroy = GameObject.Find("asteroid_destroy").GetComponent<AudioSource>();
+        earth_sound = GameObject.Find("earth_sound").GetComponent<AudioSource>();
     }
     private void FixedUpdate()
     {
@@ -39,12 +43,14 @@ public class asteroida_upgrade : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(destroy, transform.position, Quaternion.identity);
+            earth_sound.Play();
         }
         if (life == 0)
         {
             Destroy(gameObject);
             Instantiate(destroy, transform.position, Quaternion.identity);
             _gameover.score += 60;
+            asteroid_destroy.Play();
         }
     }
 

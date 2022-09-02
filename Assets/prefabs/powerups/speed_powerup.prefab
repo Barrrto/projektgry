@@ -407,6 +407,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playermovement: {fileID: 0}
   speedpart: {fileID: 6459221993954958438, guid: 661c04d22a5b5fb439962d0732654ab1, type: 3}
+  _gameover: {fileID: 0}
+  pickup: {fileID: 5727699813379118868, guid: 31e60b0422ab1284889076eb17aea0fe, type: 3}
+  boost_sound: {fileID: 7808687332254481308, guid: 6320513a42e5ebd489c4c2555ced5360, type: 3}
 --- !u!65 &6061098101267827164
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -4939,8 +4939,9 @@ MonoBehaviour:
   asteroidspeed: 0.2
   destroy: {fileID: 5552732927821907775, guid: c7346493ee18c8f4a8d20d9e6d5ec502, type: 3}
   _bullet: {fileID: 0}
-  particle_fire: {fileID: 7618292272319619260}
-  freezeparticles: {fileID: 0}
+  _gameover: {fileID: 0}
+  asteroid_destroy: {fileID: 2551118341630438044, guid: fc5055f551daf3143ac54b17e30d585a, type: 3}
+  earth_sound: {fileID: 3515496553767979277, guid: e84c294709b4bc9498fdb4d1adf23f6c, type: 3}
 --- !u!4 &8655789630789173803 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8dab7acd84844544bbebb5f181662ed6, type: 3}
